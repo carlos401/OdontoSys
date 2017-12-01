@@ -27,7 +27,7 @@ public class Application {
     public Application(){
         //for this project, instances an SQL database
         //this may change to OracleDB for example
-       this.dataBase = new SQLServerDB("172.16.202.58","4444","Odonto");
+       this.dataBase = new SQLServerDB("172.16.202.58","1433","EMPRESA");
 
        //also instances the windowManager
        this.windowManager = new WindowManager();
@@ -38,6 +38,8 @@ public class Application {
      *  also begins the user interactions through the WindowManager
      */
     public void start(){
+        this.dataBase.connect("Carlos","contra1234");
+        System.out.println("Connection successful");
         //content here
     }
 }

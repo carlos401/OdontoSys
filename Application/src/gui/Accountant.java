@@ -8,5 +8,8 @@
 
 package gui;
 
+import javax.swing.*;
+
 public class Accountant {
+    private JPanel panel1;
 }
