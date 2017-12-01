@@ -20,6 +20,9 @@ public interface DBManager {
      */
     boolean connect(String user, String password);
 
-
+    /**
+     * Disconnects the dataBase access
+     * @return true if the disconnection was successfully
+     */
     boolean disconnect();
 }

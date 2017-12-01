@@ -26,7 +26,7 @@ public class Application {
      */
     public Application(){
         //for this project, instances an SQL database
-       this.dataBase = new SQLServerDB(); //this may change for Oracle for example
+       //this.dataBase = new SQLServerDB(); //this may change for Oracle for example
     }
 
     /**

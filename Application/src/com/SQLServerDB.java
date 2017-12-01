@@ -29,6 +29,9 @@ public class SQLServerDB implements DBManager {
      */
     private static String DATABASE_NAME;
 
+    /**
+     * The real object that has the current connection
+     */
     private Connection connection;
 
     /**
@@ -78,6 +81,4 @@ public class SQLServerDB implements DBManager {
             return false;
         }
     }
-
-    //content here
 }
