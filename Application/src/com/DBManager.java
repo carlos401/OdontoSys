@@ -8,5 +8,9 @@
 
 package com;
 
+/**
+ * This interface allows the app to connect with any database
+ */
 public interface DBManager {
+    //content here
 }

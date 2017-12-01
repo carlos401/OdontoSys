@@ -7,7 +7,34 @@
  */
 
 package com;
+import gui.WindowManager;
 
 public class Application {
+
+    /**
+     * The real dataBase used
+     */
+    private DBManager dataBase;
+
+    /**
+     * Which controls the GUI interactions
+     */
+    private WindowManager windowManager;
+
+    /**
+     * The default constructor
+     */
+    public Application(){
+        //for this project, instances an SQL database
+       this.dataBase = new SQLServerDB(); //this may change for Oracle for example
+    }
+
+    /**
+     * This method initializes the connection to the DB using the interface
+     *  also begins the user interactions through the WindowManager
+     */
+    public void start(){
+        //content here
+    }
 
 }

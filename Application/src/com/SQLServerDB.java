@@ -8,7 +8,9 @@
 
 package com;
 
-public class SQLServerDB {
-    //supp mates
-    int x = 0;
+/**
+ * This class is an specific implementation of SQLServer database
+ */
+public class SQLServerDB implements DBManager {
+    //content here
 }

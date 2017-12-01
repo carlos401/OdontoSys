@@ -9,7 +9,12 @@
 package com;
 
 public class Main {
+    /**
+     * Main method, which starts the app
+     * @param args no args
+     */
     public static void main(String[] args) {
-
+        Application app = new Application();
+        app.start();
     }
 }
