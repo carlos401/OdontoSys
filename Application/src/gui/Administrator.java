@@ -8,5 +8,14 @@
 
 package gui;
 
+import javax.swing.*;
+
 public class Administrator {
+    private JButton bt1;
+    public JPanel panel1;
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+        bt1 = new JButton("Hola");
+    }
 }

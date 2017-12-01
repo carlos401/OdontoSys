@@ -7,6 +7,11 @@
  */
 
 package com;
+import gui.Administrator;
+import gui.Login;
+
+import javax.swing.*;
+import java.awt.*;
 
 public class Main {
     /**
@@ -14,7 +19,14 @@ public class Main {
      * @param args no args
      */
     public static void main(String[] args) {
-        Application app = new Application();
-        app.start();
+       // Application app = new Application();
+        //app.start();
+
+        JFrame frame = new JFrame("Sistema de Registro de Transacciones - OdontoSys");
+        frame.setContentPane(new Login().getPane());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+
     }
 }
