@@ -81,4 +81,28 @@ public class SQLServerDB implements DBManager {
             return false;
         }
     }
+
+    @Override
+    public boolean isConnected() {
+        try{
+            if(this.connection!=null){
+                return !this.connection.isClosed();
+            }
+            return false;
+        } catch (SQLException s){
+            s.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public ResultSet processQuery(String query) {
+        try{
+            Statement statement = this.connection.createStatement();
+            return statement.executeQuery(query);
+        } catch (SQLException s){
+            s.printStackTrace();
+            return null;
+        }
+    }
 }

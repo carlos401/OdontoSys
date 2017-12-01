@@ -8,6 +8,8 @@
 
 package com;
 
+import java.sql.ResultSet;
+
 /**
  * This interface allows the app to connect with any database
  */
@@ -21,8 +23,22 @@ public interface DBManager {
     boolean connect(String user, String password);
 
     /**
-     * Disconnects the dataBase access
+     * Disconnects the dataBase
      * @return true if the disconnection was successfully
      */
     boolean disconnect();
+
+    /**
+     * Allows to execute SQL statement to the DB
+     * first use the method isConnected to avoid exceptions
+     * @param query the query to execute
+     * @return A result set of tuples
+     */
+    ResultSet processQuery(String query);
+
+    /**
+     * Use this method to know if some connection us active
+     * @return true if the connection is active
+     */
+    boolean isConnected();
 }
