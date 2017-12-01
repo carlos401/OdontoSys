@@ -6,7 +6,7 @@
  * @author Carlos Delgado Rojas
  */
 
-package GUI;
+package gui;
 
-public class Administrator {
+public class Login {
 }

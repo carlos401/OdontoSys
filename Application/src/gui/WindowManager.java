@@ -6,7 +6,7 @@
  * @author Carlos Delgado Rojas
  */
 
-package GUI;
+package gui;
 
-public class Accountant {
+public class WindowManager {
 }
