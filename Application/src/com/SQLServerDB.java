@@ -8,5 +8,7 @@
 
 package com;
 
-public interface DBManager {
+public class SQLServerDB {
+    //supp mates
+    int x = 0;
 }

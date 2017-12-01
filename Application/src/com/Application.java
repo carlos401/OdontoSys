@@ -8,5 +8,6 @@
 
 package com;
 
-public interface DBManager {
+public class Application {
+
 }

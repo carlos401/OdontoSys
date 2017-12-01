@@ -6,7 +6,7 @@
  * @author Carlos Delgado Rojas
  */
 
-package com;
+package GUI;
 
-public interface DBManager {
+public class Secretary {
 }
