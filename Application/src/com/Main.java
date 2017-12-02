@@ -22,11 +22,6 @@ public class Main {
        // Application app = new Application();
         //app.start();
 
-        JFrame frame = new JFrame("Sistema de Registro de Transacciones - OdontoSys");
-        frame.setContentPane(new Login().getPane());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
 
     }
 }

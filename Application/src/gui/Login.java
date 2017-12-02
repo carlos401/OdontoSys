@@ -14,18 +14,39 @@ import java.awt.event.ActionListener;
 public class Login {
     public JPanel pnLogin;
     private JButton entrarButton2;
-    private JPasswordField passwordField1;
-    private JTextField textField1;
+    private JPasswordField pwUser;
+    private JTextField tfUserName;
     private JButton cancelarButton;
     private JLabel lbImage;
+    private WindowManager wmManager;
 
+
+    public Login(WindowManager pManager) {
+
+        wmManager = pManager;
+
+        entrarButton2.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String user = tfUserName.getText();
+                String pass =  new String(pwUser.getPassword());
+
+
+            }
+        });
+    }
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
         pnLogin = new JPanel();
         entrarButton2 = new JButton();
-        passwordField1 = new JPasswordField();
-        textField1 = new JTextField();
+        pwUser = new JPasswordField();
+        tfUserName = new JTextField();
         cancelarButton = new JButton();
         lbImage = new JLabel();
     }
