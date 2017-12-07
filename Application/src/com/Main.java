@@ -19,9 +19,7 @@ public class Main {
      * @param args no args
      */
     public static void main(String[] args) {
-       // Application app = new Application();
-        //app.start();
-
-
+        Application app = new Application();
+        app.start();
     }
 }

@@ -4,23 +4,27 @@
  * CI1312 - BASES DE DATOS I
  * @version 1.0
  * @author Carlos Delgado Rojas
+ * @author Jose Tenorio Wong
  */
 
 package gui;
-
 import javax.swing.*;
 
 public class WindowManager {
 
-    private final int ADMINISTRATOR = 89;
-    private final int SECRETARY = 2;
-    private final int CONTABLE = 1;
-    private final int GENERICO = 68;
-    private final String TITLE = "Sistema de Registro de Transacciones - OdontoSys";
+    /**
+     *
+     */
+    private final String TITLE =
+            "Sistema de Registro de Transacciones - OdontoSys";
 
+    /**
+     * The constructor
+     */
     public WindowManager(){
 
     }
+
     /**
      *
      * @param pUser
@@ -35,15 +39,15 @@ public class WindowManager {
      *
      * @param pTipo
      */
-    public void createGUI(int pTipo){
+    public void createGUI(Grant pTipo){
         switch (pTipo){
             case ADMINISTRATOR:
                 break;
             case SECRETARY:
                 break;
-            case CONTABLE:
+            case ACCOUNTANT:
                 break;
-            case GENERICO:
+            case DEFAULT:
                 break;
             default:
                 break;
