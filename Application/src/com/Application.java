@@ -8,6 +8,7 @@
 
 package com;
 import gui.WindowManager;
+import java.sql.ResultSet;
 
 public class Application {
 
@@ -39,7 +40,18 @@ public class Application {
      */
     public void start(){
         this.dataBase.connect("TPG1","123789654");
-        System.out.println("Connection successful");
+        if(this.dataBase.isConnected()){
+            System.out.println("Connection successful");
+            ResultSet tuple = this.dataBase.processQuery("SELECT NOMBRE FROM PERSONA;");
+            try{
+                while(tuple.next()){
+                    System.out.println(tuple.getString("Nombre"));
+                }
+            } catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        System.out.println(this.dataBase.disconnect());
         //content here
     }
 }

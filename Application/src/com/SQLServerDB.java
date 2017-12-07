@@ -13,7 +13,6 @@ import java.sql.*; //allows real interactions
  * This class is an specific implementation of SQLServer database
  */
 public class SQLServerDB implements DBManager {
-
     /**
      * The ip address of the machine which has the dataBase
      */
