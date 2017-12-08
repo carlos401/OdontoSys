@@ -27,7 +27,7 @@ public class Application {
      */
     public Application(){
         //for this project, instances an SQL database
-        //this may change to OracleDB for example
+        //this may be change to OracleDB "for example"
        this.dataBase =
                new SQLServerDB("172.16.202.93","1433","CONSULTORIO_DENTISTAS");
        //also instances the windowManager
