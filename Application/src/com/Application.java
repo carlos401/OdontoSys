@@ -42,18 +42,18 @@ public class Application {
         this.dataBase.connect("TPG1","123789654");
         if(this.dataBase.isConnected()){
             System.out.println("Connection successful");
-            ResultSet tuple = this.dataBase.processQuery(
-                    "SELECT * FROM PERSONA P, TELEFONOS T" +
-                            " WHERE P.IDENTIFICACION = T.ID_PERSONA;");
-            try{
-                while(tuple.next()){
-                    System.out.println(tuple.getString("Identificacion") + " " +
-                            tuple.getString("Nombre") + " " +
-                            tuple.getString("Telefono"));
-                }
-            } catch(Exception e){
-                e.printStackTrace();
-            }
+//            ResultSet tuple = this.dataBase.processQuery(
+//                    "SELECT * FROM PERSONA P, TELEFONOS T" +
+//                            " WHERE P.IDENTIFICACION = T.ID_PERSONA;");
+//            try{
+//                while(tuple.next()){
+//                    System.out.println(tuple.getString("Identificacion") + " " +
+//                            tuple.getString("Nombre") + " " +
+//                            tuple.getString("Telefono"));
+//                }
+//            } catch(Exception e){
+//                e.printStackTrace();
+//            }
         }
         System.out.println(this.dataBase.disconnect());
         //content here
