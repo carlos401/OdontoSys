@@ -52,7 +52,7 @@ public class Application {
 //                            tuple.getString("Telefono"));
 //                }
 //            } catch(Exception e){
-//                e.printStackTrace();
+//                e.printStackTrace(); cambio
 //            }
         }
         System.out.println(this.dataBase.disconnect());
