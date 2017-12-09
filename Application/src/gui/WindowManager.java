@@ -34,11 +34,12 @@ public class WindowManager {
             "Sistema de Registro de Transacciones - OdontoSys"; //remember that the code is typed in English, but GUI is in Spanish
 
     /**
-     * T
+     *
      * @param pUser
      * @param pPass
      */
     public void validateUser(String pUser,String pPass){
+
     }
 
     /**

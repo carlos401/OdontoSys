@@ -35,7 +35,13 @@ public class Login {
             public void actionPerformed(ActionEvent e) {
                 String user = tfUserName.getText();
                 String pass =  new String(pwUser.getPassword());
-
+                if(pass != "" && user != ""){
+                    wmManager.validateUser(user,pass);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"Por favor ingrese un usuario y contraseña validos");
+                }
+                //wmManager.createGUI(Grant.ACCOUNTANT);
 
             }
         });

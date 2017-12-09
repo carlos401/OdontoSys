@@ -8,6 +8,8 @@
 
 package com;
 
+import gui.WindowManager;
+
 public class Main {
     /**
      * Main method, which starts the app
