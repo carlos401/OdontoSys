@@ -36,6 +36,8 @@ public class WindowManager {
     private final String TITLE =
             "Sistema de Registro de Transacciones - OdontoSys"; //remember that the code is typed in English, but GUI is in Spanish
 
+
+    //ksldjfñsdjfsñlkj dfñsldkjfsñldkjfsñldkjf ñlskj dfñlksj dñflkjsdñlf kjsdñlk fjsñldkjf ñsldkjf ñlskdjf sñldkj fsñlkd jfñslk djf
     /**
      *
      * @param pUser
