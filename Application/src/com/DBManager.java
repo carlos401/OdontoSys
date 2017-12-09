@@ -41,4 +41,12 @@ public interface DBManager {
      * @return true if the connection is active, false otherwise
      */
     boolean isConnected();
+
+    /**
+     * Allows execute stored procedures in the DB
+     * @param sql the sql calling statement
+     * @return a resultSet with the result
+     * the person who call the method, should cast the result
+     */
+    ResultSet callStoredProcedure(String sql);
 }

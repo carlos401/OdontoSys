@@ -9,6 +9,8 @@
 package com;
 import gui.Grant;
 import gui.WindowManager;
+
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 
 public class Application {
@@ -75,7 +77,7 @@ public class Application {
                 case 2:
                     return Grant.ACCOUNTANT;
                 default:
-                    return null;
+                    return Grant.DEFAULT;
             }
         }
         return null;

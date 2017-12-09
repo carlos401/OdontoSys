@@ -61,12 +61,11 @@ public class SQLServerDB implements DBManager {
         } catch (SQLException s){
             //this error is from getConnection line
             s.printStackTrace();
-            return false;
         } catch (ClassNotFoundException c){
             //this error is from Class.forName line
             c.printStackTrace();
-            return false;
         }
+        return false;
     }
 
     @Override
@@ -74,12 +73,12 @@ public class SQLServerDB implements DBManager {
         try{
             if((this.connection!=null) && (!this.connection.isClosed())){
                 this.connection.close();
+                return true;
             }
-            return true;
         } catch (SQLException s){
             s.printStackTrace();
-            return false;
         }
+        return false;
     }
 
     @Override
@@ -88,11 +87,10 @@ public class SQLServerDB implements DBManager {
             if(this.connection!=null){
                 return !this.connection.isClosed();
             }
-            return false;
         } catch (SQLException s){
             s.printStackTrace();
-            return false;
         }
+        return false;
     }
 
     @Override
@@ -102,7 +100,20 @@ public class SQLServerDB implements DBManager {
             return statement.executeQuery(query);
         } catch (SQLException s){
             s.printStackTrace();
-            return null;
         }
+        return null;
+    }
+
+    @Override
+    public ResultSet callStoredProcedure(String sql) {
+        try{
+            CallableStatement cst = this.connection.prepareCall(sql);
+            if(cst.execute()){
+                return cst.getResultSet();
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }
