@@ -10,6 +10,7 @@ package com;
 import gui.Grant;
 import gui.WindowManager;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class Application {
 
@@ -40,23 +41,8 @@ public class Application {
      *  also begins the user interactions through the WindowManager
      */
     public void start(){
-        if(this.dataBase.connect("TPG1","123789654")){
-            System.out.println("Connection successful");
-//            ResultSet tuple = this.dataBase.processQuery(
-//                    "SELECT * FROM PERSONA P, TELEFONOS T" +
-//                            " WHERE P.IDENTIFICACION = T.ID_PERSONA;");
-//            try{
-//                while(tuple.next()){
-//                    System.out.println(tuple.getString("Identificacion") + " " +
-//                            tuple.getString("Nombre") + " " +
-//                            tuple.getString("Telefono"));
-//                }
-//            } catch(Exception e){
-//                e.printStackTrace();
-//            }
-        }
-        //content here
-        this.initGUILogin();
+        System.out.println(this.connectUser("TPG1","123789654"));
+        //this.windowManager.
     }
 
     /**
@@ -67,22 +53,27 @@ public class Application {
      */
     public Grant connectUser(String username, String password){
         if(this.dataBase.connect(username,password)){
-            Integer grant = 0; //call a function who returns the numeric grant codification
-            switch (grant){
-                case 0:
-                    return Grant.ADMINISTRATOR;
-                case 1:
-                    return Grant.SECRETARY;
-                case 2:
-                    return Grant.ACCOUNTANT;
-                default:
-                    return null;
+            //call a function which returns the numeric grant codification
+            ArrayList<String> param =
+                    new ArrayList<>(1); param.add(username);
+            try{
+                ResultSet rs = this.dataBase.callStoredProcedure("{call obtenerTipoUsuario(?)}",param);
+                if(rs.next()){
+                    switch (rs.getInt("Tipo")){
+                        case 0:
+                            return Grant.ADMINISTRATOR;
+                        case 1:
+                            return Grant.SECRETARY;
+                        case 2:
+                            return Grant.ACCOUNTANT;
+                        default:
+                            return Grant.DEFAULT;
+                    }
+                }
+            } catch (Exception e){
+                e.printStackTrace();
             }
         }
-        return null;
-    }
-
-    private void initGUILogin(){
-        this.windowManager.runLogin();
+        return Grant.ERROR;
     }
 }
