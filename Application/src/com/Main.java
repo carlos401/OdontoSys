@@ -7,11 +7,6 @@
  */
 
 package com;
-import gui.Administrator;
-import gui.Login;
-
-import javax.swing.*;
-import java.awt.*;
 
 public class Main {
     /**

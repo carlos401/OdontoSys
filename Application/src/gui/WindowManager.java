@@ -8,22 +8,30 @@
  */
 
 package gui;
+import com.Application;
 import javax.swing.*;
 
 public class WindowManager {
-
     /**
-     *
+     * The app that has called this manager
+     * use this reference to do things with the DB
      */
-    private final String TITLE =
-            "Sistema de Registro de Transacciones - OdontoSys";
+    private Application application;
 
     /**
      * The constructor
+     * @param application the reference of the app
      */
-    public WindowManager(){
-
+    public WindowManager(Application application){
+        this.application = application;
     }
+
+    /**
+     * The name of the application
+     * this is shown on screen
+     */
+    private final String TITLE =
+            "Sistema de Registro de Transacciones - OdontoSys"; //remember that the code is typed in English
 
     /**
      *

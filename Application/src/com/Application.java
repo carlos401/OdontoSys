@@ -7,6 +7,7 @@
  */
 
 package com;
+import gui.Grant;
 import gui.WindowManager;
 import java.sql.ResultSet;
 
@@ -52,10 +53,35 @@ public class Application {
 //                            tuple.getString("Telefono"));
 //                }
 //            } catch(Exception e){
-//                e.printStackTrace(); cambio
+//                e.printStackTrace();
 //            }
         }
         System.out.println(this.dataBase.disconnect());
         //content here
     }
+
+    /**
+     * This methods connect with the database using authentication for SQLServer
+     * @param username the username to connect
+     * @param password the password for authentication
+     * @return The corresponding category of user
+     */
+    public Grant connectUser(String username, String password){
+        if(this.dataBase.connect(username,password)){
+            Integer grant = 0; //call a function who returns the numeric grant codification
+            switch (grant){
+                case 0:
+                    return Grant.ADMINISTRATOR;
+                case 1:
+                    return Grant.SECRETARY;
+                case 2:
+                    return Grant.ACCOUNTANT;
+                default:
+                    return null;
+            }
+        }
+        return null;
+    }
+
+
 }
