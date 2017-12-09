@@ -35,13 +35,14 @@ public class SQLServerDB implements DBManager {
 
     /**
      * The constructor
-     * @param ipAddress ip address of the machine with the dataBase
+     * @param ipAddress the ip address of the machine that has the dataBase
      * @param port the port allowed to listen queries
      */
     public SQLServerDB(String ipAddress, String port, String database){
         IP_ADDRESS = ipAddress;
         PORT = port;
         DATABASE_NAME = database;
+        //to create a connection use the methods created for this
         this.connection = null;
     }
 

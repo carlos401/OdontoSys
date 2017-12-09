@@ -31,7 +31,7 @@ public class WindowManager {
      * this is shown on screen
      */
     private final String TITLE =
-            "Sistema de Registro de Transacciones - OdontoSys"; //remember that the code is typed in English
+            "Sistema de Registro de Transacciones - OdontoSys"; //remember that the code is typed in English, but GUI is in Spanish
 
     /**
      *
@@ -39,7 +39,7 @@ public class WindowManager {
      * @param pPass
      */
     public void validateUser(String pUser,String pPass){
-        //App.
+
     }
 
     /**
@@ -81,5 +81,4 @@ public class WindowManager {
     private void runAccountant(){
 
     }
-
 }

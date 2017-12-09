@@ -31,8 +31,8 @@ public class Application {
         //this may be change to OracleDB "for example"
        this.dataBase =
                new SQLServerDB("172.16.202.93","1433","CONSULTORIO_DENTISTAS");
-       //also instances the windowManager
-        this.windowManager = new WindowManager();
+        //the app references itself for management
+        this.windowManager = new WindowManager(this);
     }
 
     /**
@@ -40,8 +40,7 @@ public class Application {
      *  also begins the user interactions through the WindowManager
      */
     public void start(){
-        this.dataBase.connect("TPG1","123789654");
-        if(this.dataBase.isConnected()){
+        if(this.dataBase.connect("TPG1","123789654")){
             System.out.println("Connection successful");
 //            ResultSet tuple = this.dataBase.processQuery(
 //                    "SELECT * FROM PERSONA P, TELEFONOS T" +
@@ -56,7 +55,6 @@ public class Application {
 //                e.printStackTrace();
 //            }
         }
-        System.out.println(this.dataBase.disconnect());
         //content here
     }
 
@@ -82,6 +80,5 @@ public class Application {
         }
         return null;
     }
-
 
 }
