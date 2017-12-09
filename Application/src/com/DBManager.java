@@ -9,6 +9,7 @@
 package com;
 
 import java.sql.ResultSet;
+import java.util.List;
 
 /**
  * This interface allows the app to connect with any database
@@ -45,8 +46,9 @@ public interface DBManager {
     /**
      * Allows execute stored procedures in the DB
      * @param sql the sql calling statement
+     * @param parameters the list of parameters in case of function
      * @return a resultSet with the result
      * the person who call the method, should cast the result
      */
-    ResultSet callStoredProcedure(String sql);
+    ResultSet callStoredProcedure(String sql,List<String> parameters);
 }

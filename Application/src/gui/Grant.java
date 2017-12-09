@@ -31,5 +31,10 @@ public enum Grant{
     /**
      * The default user
      */
-    DEFAULT
+    DEFAULT,
+
+    /**
+     * For manage errors
+     */
+    ERROR
 }

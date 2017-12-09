@@ -8,6 +8,7 @@
 
 package com;
 import java.sql.*; //allows real interactions
+import java.util.List;
 
 /**
  * This class is an specific implementation of SQLServer database
@@ -105,9 +106,14 @@ public class SQLServerDB implements DBManager {
     }
 
     @Override
-    public ResultSet callStoredProcedure(String sql) {
+    public ResultSet callStoredProcedure(String sql, List<String> parameters) {
         try{
+            //statement which will be called
             CallableStatement cst = this.connection.prepareCall(sql);
+            //set all the parameters to the function
+            for(int index=1 ; index <= parameters.size(); ++index){
+                cst.setString(index,parameters.get(index-1));
+            }
             if(cst.execute()){
                 return cst.getResultSet();
             }
