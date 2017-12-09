@@ -17,12 +17,15 @@ public class WindowManager {
      * use this reference to do things with the DB
      */
     private Application application;
-
+    private JFrame frameGUI;
     /**
      * The constructor
      * @param application the reference of the app
      */
     public WindowManager(Application application){
+
+        this.frameGUI = new JFrame(TITLE);
+        this.frameGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.application = application;
     }
 
@@ -39,7 +42,7 @@ public class WindowManager {
      * @param pPass
      */
     public void validateUser(String pUser,String pPass){
-
+        //this.application.connectUser(pUser,pPass);
     }
 
     /**
@@ -54,6 +57,7 @@ public class WindowManager {
             case SECRETARY:
                 break;
             case ACCOUNTANT:
+                runAccountant();
                 break;
             case DEFAULT:
                 break;
@@ -62,12 +66,11 @@ public class WindowManager {
         }
     }
 
-    private void runLogin(){
-        JFrame frame = new JFrame(TITLE);
-        frame.setContentPane(new Login(this).getPane());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+    public void runLogin(){
+        this.frameGUI.setContentPane(new Login(this).getPane());
+        frameGUI.pack();
+        frameGUI.setVisible(true);
+
     }
 
     private void runAdministrator(){
@@ -79,6 +82,9 @@ public class WindowManager {
     }
 
     private void runAccountant(){
+        frameGUI.setContentPane(new Accountant(this).getPane());
+        frameGUI.pack();
+        frameGUI.setVisible(true);
 
     }
 }
