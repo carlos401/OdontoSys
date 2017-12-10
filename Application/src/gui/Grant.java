@@ -13,6 +13,7 @@ package gui;
  * This enum is used to define the types of windows to show
  */
 public enum Grant{
+
     /**
      * All privileges in the view
      */

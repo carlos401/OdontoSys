@@ -12,18 +12,20 @@ import com.Application;
 import javax.swing.*;
 
 public class WindowManager {
+
     /**
      * The app that has called this manager
      * use this reference to do things with the DB
      */
     private Application application;
+
     private JFrame frameGUI;
+
     /**
      * The constructor
      * @param application the reference of the app
      */
     public WindowManager(Application application){
-
         this.frameGUI = new JFrame(TITLE);
         this.frameGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.application = application;
@@ -36,8 +38,6 @@ public class WindowManager {
     private final String TITLE =
             "Sistema de Registro de Transacciones - OdontoSys"; //remember that the code is typed in English, but GUI is in Spanish
 
-
-    //ksldjfñsdjfsñlkj dfñsldkjfsñldkjfsñldkjf ñlskj dfñlksj dñflkjsdñlf kjsdñlk fjsñldkjf ñsldkjf ñlskdjf sñldkj fsñlkd jfñslk djf
     /**
      *
      * @param pUser

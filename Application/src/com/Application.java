@@ -11,6 +11,7 @@ import gui.Grant;
 import gui.WindowManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Application {
 
@@ -54,7 +55,7 @@ public class Application {
     public Grant connectUser(String username, String password){
         if(this.dataBase.connect(username,password)){
             //call a function which returns the numeric grant codification
-            ArrayList<String> param =
+            List<String> param =
                     new ArrayList<>(1); param.add(username);
             try{
                 ResultSet rs = this.dataBase.callStoredProcedure("{call obtenerTipoUsuario(?)}",param);
